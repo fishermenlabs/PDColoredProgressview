@@ -32,7 +32,10 @@
 }
 
 - (void)drawRect:(CGRect)rect
-{	
+{
+	// do not render if rect is empty
+	if (CGRectIsEmpty(rect)) { return; }
+
 	if([self progressViewStyle] == UIProgressViewStyleDefault)
 	{
 		CGContextRef ctx = UIGraphicsGetCurrentContext();
